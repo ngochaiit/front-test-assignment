@@ -4,6 +4,7 @@ import { CircularProgress, Grid, Typography } from '@mui/material';
 import MainLayout from '../../layout/MainLayout';
 import useCollection from '../../hooks/useCollection';
 import Content from './components/content/Content';
+import Toolbar from './components/tool-bar/toor-bar';
 
 export const Collection = () => {
   const { data, isSuccess, loading } = useCollection();
@@ -15,6 +16,7 @@ export const Collection = () => {
       {loading && <CircularProgress />}
       {isSuccess ? (
         <>
+          <Toolbar />
           <Content data={data} />
         </>
       ) : (

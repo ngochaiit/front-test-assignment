@@ -6,6 +6,6 @@ export interface CollectionItem {
 export interface Player {
   firstname: string;
   lastname: string;
-  birthday: string;
+  birthday: Date;
   image: string;
 }
