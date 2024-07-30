@@ -1,10 +1,84 @@
 # Unagi Frontend Test
 
+## Requirement match:
+
+1. Show a single static card on `/collection` page => **Done**
+   Bonus points (can be done in arbitrary order):
+
+- Add TS types/interfaces where applicable. => **Done**
+- Convert code to fetch the player image without having the full URL, => **Done**
+  but by generating it with the existing ID. => Done
+- Implement simple lazy loading for the player image, show loading indicator => **Done**
+  while the image is loading.
+- Format player DOB in a human-readable way. => **Done**
+
+2. Fetch collection from a fake REST API
+
+Rework `fetchCollection` function in [collection.ts](/src/lib/collection.ts)
+to fetch cards from http://localhost:8001/cards instead of the local constant. => **Done**e
+
+Apply necessary changes to [Collection](/src/pages/Collection.tsx) component if needed.
+
+Bonus points (can be done in arbitrary order):
+
+- Add loading state in the UI. => **Done**
+- Handle error state, e.g. if the server returns 500. => **Done**
+- Implement a reusable card component. => **Done**
+- Replace existing plain CSS styles with [Styled Components](https://styled-components.com/) => **Done**
+  if you see the benefits.
+- Add TS types/interfaces in React components where applicable. => **Done**
+
+3. Edit the popup on `/create-card` page
+
+Fill `CreateCard` component in [CreateCard.tsx](/src/pages/CreateCard.tsx) to allow user
+to create a card. In this test project [json-server](https://github.com/typicode/json-server)  
+is used as a fake API server. => **Done**
+
+You can use `json-server` to persist changes for this API. => **Done**
+Basically, you can POST json onto http://localhost:8001/cards.
+
+Bonus points (can be done in arbitrary order): => **Done**
+
+- Implement client-side validation. => **Done**
+- Implement REST/REST-like endpoint(s). => **Done**
+- Add TS types/interfaces where applicable. => **Done**
+- Handle server-side errors, e.g. 4xx on submitting. => **Done**
+
+### 4. Show all the cards as a collection => **Done**
+
+On a real use case, we don't want to show only one card, so please update the code to show each
+card in the collection (e.g. a grid of cards). **Done**
+
+Make sure that this screen is responsive. **Done**
+
+Bonus points (can be done in arbitrary order): **Done**
+
+- Add loading state in the UI. => **Done**
+- Add empty state (endpoint returns an empty array). => **Done**
+- Add simple client-side ordering by any criteria - DOB/Last name/First name etc. => **Done**
+  with a UI control, e.g. Radio button. => **Done**
+
+### Folder Structure
+
+```
+/src
+  /api               -> Api services
+  /components        -> Reusable UI component that can be standalone
+  /constants         -> Constants
+  /Hooks             -> Hooks
+  /layout            => main layout for whole page.
+  /modal              -> Any configuration variables
+  /pages                -> Pages to render
+  /themes               -> Theme resources
+  /typings              -> Custom typings
+  /utils                -> Utility functions
+```
+
 ## Requirements
 
-* [Node.js](https://nodejs.org)
-* [TypeScript](https://www.typescriptlang.org/)
-* [React](https://reactjs.org/)
+- [Node.js](https://nodejs.org)
+- [TypeScript](https://www.typescriptlang.org/)
+- [React](https://reactjs.org/)
 
 ## Basics
 
@@ -29,7 +103,7 @@ Also, it will be great if you split your steps using branches or commits.
 Don't hesitate to over-engineer the problem a bit, so we will be able to see
 the way you work, split and organize your file on a real project.
 
-``` sh
+```sh
 # Install dependencies
 npm install
 
@@ -45,13 +119,13 @@ a single card with the data stored in `card` variable (line 9).
 This page can be seen on [http://localhost:8000/collection](http://localhost:8000/collection)
 
 Bonus points (can be done in arbitrary order):
+
 - Add TS types/interfaces where applicable.
 - Convert code to fetch the player image without having the full URL,
   but by generating it with the existing ID.
 - Implement simple lazy loading for the player image, show loading indicator
   while the image is loading.
 - Format player DOB in a human-readable way.
-
 
 ### 2. Fetch collection from a fake REST API
 
@@ -61,6 +135,7 @@ to fetch cards from http://localhost:8001/cards instead of the local constant.
 Apply necessary changes to [Collection](/src/pages/Collection.tsx) component if needed.
 
 Bonus points (can be done in arbitrary order):
+
 - Add loading state in the UI.
 - Handle error state, e.g. if the server returns 500.
 - Implement a reusable card component.
@@ -78,6 +153,7 @@ You can use `json-server` to persist changes for this API.
 Basically, you can POST json onto http://localhost:8001/cards.
 
 Bonus points (can be done in arbitrary order):
+
 - Implement client-side validation.
 - Implement REST/REST-like endpoint(s).
 - Add TS types/interfaces where applicable.
@@ -91,6 +167,7 @@ card in the collection (e.g. a grid of cards).
 Make sure that this screen is responsive.
 
 Bonus points (can be done in arbitrary order):
+
 - Add loading state in the UI.
 - Add empty state (endpoint returns an empty array).
 - Add simple client-side ordering by any criteria - DOB/Last name/First name etc.
@@ -99,6 +176,7 @@ Bonus points (can be done in arbitrary order):
 ## Scoring
 
 You will be evaluated based on the following criteria:
+
 - **Functionality:**
   - Does your code work?
   - Think build, warnings, error management.
@@ -109,6 +187,7 @@ You will be evaluated based on the following criteria:
   - Did you go further the scope? But should not interfere with the two previous point.
 
 **Ideas and tools we love and use in the real project:**
+
 - TypeScript without `any`
 - Hooks
 - Breaking code down to small pieces

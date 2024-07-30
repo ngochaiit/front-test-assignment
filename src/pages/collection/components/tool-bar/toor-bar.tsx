@@ -23,7 +23,6 @@ interface Props {
 
 const ToolBar: FC<Props> = ({ setSortBy, sortBy }) => {
   const handleChange = (event) => {
-    console.log('event.target.value', event.target.value);
     setSortBy(event.target.value);
   };
 
