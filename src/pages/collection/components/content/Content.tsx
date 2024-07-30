@@ -27,7 +27,7 @@ const Content: FC<Props> = ({ data }) => {
   return (
     <Grid py={5} container spacing={2}>
       {data.map((item) => (
-        <Grid item xs={6} md={3}>
+        <Grid item xs={6} md={3} key={item.id}>
           <CollectionCard key={item.id} item={item} />
         </Grid>
       ))}

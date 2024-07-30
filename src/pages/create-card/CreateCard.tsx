@@ -11,7 +11,6 @@ import { DatePicker } from '@mui/x-date-pickers';
 import axios from 'axios';
 import { useHistory } from 'react-router-dom';
 
-import { Player } from '../../modal/collection';
 import MainLayout from '../../layout/MainLayout';
 import { CARD_ENDPOINT } from '../../constants';
 import { randomId } from '../../utils';
@@ -19,11 +18,6 @@ import { randomId } from '../../utils';
 /**
  * Step 3: Render a form and everything needed to be able to create a card
  */
-
-interface DatePickerProps<T = Date> {
-  value?: T;
-  // other properties...
-}
 
 export const CreateCard = () => {
   const history = useHistory();
